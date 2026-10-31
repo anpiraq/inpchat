@@ -1,0 +1,6 @@
+{
+  "name": "INP Chat",
+  "description": "منصة التواصل والمحادثات والبيانات الرسمية لحزب الهوية القومية العراقية (INP)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

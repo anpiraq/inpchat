@@ -18,17 +18,9 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Install Gradle & Generate Wrapper
+    - name: Build with Gradle
       run: |
-        sudo apt-get update
-        sudo apt-get install -y gradle
         gradle wrapper
-
-    - name: Accept SDK Licenses & Build APK
-      env:
-        ANDROID_HOME: /usr/local/lib/android/sdk
-      run: |
-        yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses || true
         chmod +x gradlew
         ./gradlew assembleDebug
 

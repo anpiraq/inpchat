@@ -36,12 +36,17 @@ jobs:
       - name: Grant Execute Permission
         run: chmod +x ./gradlew
 
-            - name: Check Java Version
+      - name: Check Java Version
         run: java -version
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: ANP-Android-APK-${{ github.run_number }}
-          path: "**/build/outputs/apk/debug/*.apk"
+          path: |
+            **/build/outputs/apk/debug/*.apk
           if-no-files-found: error
           retention-days: 14
